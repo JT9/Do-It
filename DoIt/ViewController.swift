@@ -44,8 +44,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //Getting number of tasks to display
         let task = tasks[indexPath.row]
         
-        //Set Label for each cell
-        cell.textLabel?.text = task.name
+        if task.important {
+            //Set Label for each cell
+            cell.textLabel?.text = "❗️\(task.name)"
+        } else {
+            //Set Label for each cell
+            cell.textLabel?.text = task.name
+        }
         
         return cell
     }
@@ -60,7 +65,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let task2 = Task()
         task2.name = "Buy Cheese"
-        task2.important = false
+        task2.important = true
         
         let task3 = Task()
         task3.name = "Mow the lawn"
