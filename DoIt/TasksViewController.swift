@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TasksViewController.swift
 //  DoIt
 //
 //  Created by C T on 10/3/17.
@@ -9,7 +9,7 @@
 import UIKit
 
 //Need to add UITableViewDelegate & DataSource in order to use TableView
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     
     @IBOutlet weak var tableView: UITableView!
@@ -82,6 +82,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         performSegue(withIdentifier: "addSegue", sender: nil)
         
     }
+    
+    
     
 
     override func didReceiveMemoryWarning() {
