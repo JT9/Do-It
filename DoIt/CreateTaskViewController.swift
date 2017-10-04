@@ -42,6 +42,12 @@ class CreateTaskViewController: UIViewController {
         
         previousViewController.tasks.append(task)
         
+        //Refresh the tableView after adding a new task
+        previousViewController.tableView.reloadData()
+        
+        //After clicking the add button it will go back to the previous ViewController
+        navigationController!.popViewController(animated: true)
+        
     }
     
     
