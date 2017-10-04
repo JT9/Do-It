@@ -10,15 +10,25 @@ import UIKit
 
 class CompleteTaskViewController: UIViewController {
 
+    
+    
+    @IBOutlet weak var taskLabel: UILabel!
+    
+    
     //New task object
     var task = Task()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        taskLabel.text = task.name
     }
 
+    @IBAction func completeButton(_ sender: Any) {
+        
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

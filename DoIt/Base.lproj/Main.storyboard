@@ -138,9 +138,33 @@
                     <view key="view" contentMode="scaleToFill" id="mmr-bM-RjJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTd-ch-Le6">
+                                <rect key="frame" x="158" y="84" width="59.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pUv-Z1-qTH">
+                                <rect key="frame" x="154.5" y="139" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completeButton:" destination="2YW-ok-2KJ" eventType="touchUpInside" id="lBB-oq-F0J"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yTd-ch-Le6" firstAttribute="top" secondItem="MN2-2z-KJh" secondAttribute="top" constant="20" id="Obc-gg-KbL"/>
+                            <constraint firstItem="yTd-ch-Le6" firstAttribute="centerX" secondItem="mmr-bM-RjJ" secondAttribute="centerX" id="a8A-oj-7t4"/>
+                            <constraint firstItem="pUv-Z1-qTH" firstAttribute="top" secondItem="yTd-ch-Le6" secondAttribute="bottom" constant="25" id="hdY-Ns-cDF"/>
+                            <constraint firstItem="pUv-Z1-qTH" firstAttribute="centerX" secondItem="mmr-bM-RjJ" secondAttribute="centerX" id="kgC-Kw-47J"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MN2-2z-KJh"/>
                     </view>
+                    <connections>
+                        <outlet property="taskLabel" destination="yTd-ch-Le6" id="XgG-3o-02j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qY5-Xg-axE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
