@@ -30,6 +30,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    //Gets called everytime your View Controller shows up on the screen
+    override func viewWillAppear(_ animated: Bool) {
+        //Used to get the tasks
+        getTasks()
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //How many rows from array
@@ -74,6 +81,15 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     
     func getTasks() {
+        //Used for CoreData
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            tasks = try context.fetch(Task.fetchRequest()) as! [Task]
+            print(tasks)
+        } catch {
+            print("Error")
+        }
         
     }
     
