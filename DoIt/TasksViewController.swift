@@ -72,16 +72,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
+    
+    func getTasks() {
+        
+    }
+    
     //Used to reference var previousViewController to pass information
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        //Used to check which segue to perform
-        if segue.identifier == "addSegue" {
-            
-            let nextViewController = segue.destination as! CreateTaskViewController
-            
-            nextViewController.previousViewController = self
-        }
         
         if segue.identifier == "selectTasksSegue" {
             

@@ -14,8 +14,6 @@ class CreateTaskViewController: UIViewController {
 
     @IBOutlet weak var importantSwitch: UISwitch!
     
-    //Used to pass information between ViewControllers
-    var previousViewController = TasksViewController()
     
     
     
@@ -25,25 +23,25 @@ class CreateTaskViewController: UIViewController {
     }
 
     
-    
+    //Create a Task from the button press
     @IBAction func addTapped(_ sender: Any) {
-        //Create a Task from the outlet information
         
-        //Create a new task obj
-        let task = Task()
+        //Used for CoreData
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        
+        
+        //Create a new task with Core Data
+        let task = Task(context: context)
+        
         //Pass entered text into task
         task.name = taskNameTextField.text!
         
         //Used to see if the switch is on
         task.important = importantSwitch.isOn
         
-        
-        //Add a new task to the array in the previous ViewController
-        
-        previousViewController.tasks.append(task)
-        
-        //Refresh the tableView after adding a new task
-        previousViewController.tableView.reloadData()
+        //Save CoreData
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         //After clicking the add button it will go back to the previous ViewController
         navigationController!.popViewController(animated: true)
