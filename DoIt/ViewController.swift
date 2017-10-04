@@ -78,7 +78,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     @IBAction func plusTapped(_ sender: Any) {
-        //Used to move to another ViewController from pushing the plus button
+        //Used to move to another ViewController from pushing the plus button in the Nav Bar
         performSegue(withIdentifier: "addSegue", sender: nil)
         
     }
