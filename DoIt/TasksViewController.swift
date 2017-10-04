@@ -17,8 +17,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Empty array of Task objects
     var tasks : [Task] = []
     
-    //Used to keep track of index
-    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +30,12 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Gets called everytime your View Controller shows up on the screen
     override func viewWillAppear(_ animated: Bool) {
+        
         //Used to get the tasks
         getTasks()
+        
+        //Reload tableView data
+        tableView.reloadData()
     }
     
     
@@ -53,10 +55,10 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         if task.important {
             //Set Label for each cell
-            cell.textLabel?.text = "❗️\(task.name)"
+            cell.textLabel?.text = "❗️\(task.name!)"
         } else {
             //Set Label for each cell
-            cell.textLabel?.text = task.name
+            cell.textLabel?.text = task.name!
         }
         
         return cell
@@ -64,9 +66,6 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Used to perform segue to a selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //Update the index of the selected row
-        selectedIndex = indexPath.row
         
         let task = tasks[indexPath.row]
         performSegue(withIdentifier: "selectTasksSegue", sender: task)
@@ -100,8 +99,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             
             let nextViewController = segue.destination as! CompleteTaskViewController
             
-            nextViewController.task = sender as! Task
-            nextViewController.previousViewController = self
+            nextViewController.task = sender as? Task
         }
     }
         
