@@ -77,6 +77,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
     }
+    @IBAction func plusTapped(_ sender: Any) {
+        //Used to move to another ViewController from pushing the plus button
+        performSegue(withIdentifier: "addSegue", sender: nil)
+        
+    }
     
 
     override func didReceiveMemoryWarning() {
