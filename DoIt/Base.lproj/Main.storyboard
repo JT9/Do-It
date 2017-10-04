@@ -49,10 +49,10 @@
             </objects>
             <point key="canvasLocation" x="670" y="655"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Task View Controller-->
         <scene sceneID="sFF-q8-Em8">
             <objects>
-                <viewController id="4tl-QV-zW6" sceneMemberID="viewController">
+                <viewController id="4tl-QV-zW6" customClass="CreateTaskViewController" customModule="DoIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vKK-i4-1PK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -81,6 +81,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfS-Ml-lkh">
                                 <rect key="frame" x="172.5" y="262" width="30" height="30"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="addTapped:" destination="4tl-QV-zW6" eventType="touchUpInside" id="dVp-4b-kvg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,6 +103,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1PO-g3-vyr"/>
                     </view>
+                    <connections>
+                        <outlet property="importantSwitch" destination="Ykj-Js-HPn" id="wRV-Mh-1g1"/>
+                        <outlet property="taskNameTextField" destination="ig5-1y-QnI" id="Ub3-Bb-69k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBr-71-UkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
