@@ -83,7 +83,13 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
     }
     
-    
+    //Used to reference var previousViewController to pass information
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nextViewController = segue.destination as! CreateTaskViewController
+        
+        nextViewController.previousViewController = self
+    }
     
 
     override func didReceiveMemoryWarning() {

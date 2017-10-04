@@ -38,7 +38,9 @@ class CreateTaskViewController: UIViewController {
         task.important = importantSwitch.isOn
         
         
-        //Add a new task to the arrary in the previous ViewController
+        //Add a new task to the array in the previous ViewController
+        
+        previousViewController.tasks.append(task)
         
     }
     
