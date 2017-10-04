@@ -56,7 +56,48 @@
                     <view key="view" contentMode="scaleToFill" id="vKK-i4-1PK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Nc-tF-O6w">
+                                <rect key="frame" x="162.5" y="79" width="50" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ig5-1y-QnI">
+                                <rect key="frame" x="40" y="110" width="295" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Important:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGZ-Ad-dlZ">
+                                <rect key="frame" x="147.5" y="170" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ykj-Js-HPn">
+                                <rect key="frame" x="163" y="201" width="51" height="31"/>
+                            </switch>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfS-Ml-lkh">
+                                <rect key="frame" x="172.5" y="262" width="30" height="30"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FfS-Ml-lkh" firstAttribute="centerX" secondItem="vKK-i4-1PK" secondAttribute="centerX" id="4Fq-Yp-5bX"/>
+                            <constraint firstItem="1PO-g3-vyr" firstAttribute="trailing" secondItem="ig5-1y-QnI" secondAttribute="trailing" constant="40" id="7bI-x3-Vc8"/>
+                            <constraint firstItem="Ykj-Js-HPn" firstAttribute="centerX" secondItem="vKK-i4-1PK" secondAttribute="centerX" id="C0H-vi-OWD"/>
+                            <constraint firstItem="9Nc-tF-O6w" firstAttribute="centerX" secondItem="vKK-i4-1PK" secondAttribute="centerX" id="CaA-zC-Evp"/>
+                            <constraint firstItem="Ykj-Js-HPn" firstAttribute="top" secondItem="JGZ-Ad-dlZ" secondAttribute="bottom" constant="10" id="HEH-vR-jWN"/>
+                            <constraint firstItem="JGZ-Ad-dlZ" firstAttribute="centerX" secondItem="vKK-i4-1PK" secondAttribute="centerX" id="QmV-TX-UhS"/>
+                            <constraint firstItem="ig5-1y-QnI" firstAttribute="centerX" secondItem="vKK-i4-1PK" secondAttribute="centerX" id="csP-im-1BK"/>
+                            <constraint firstItem="9Nc-tF-O6w" firstAttribute="top" secondItem="1PO-g3-vyr" secondAttribute="top" constant="15" id="gET-jV-bJV"/>
+                            <constraint firstItem="JGZ-Ad-dlZ" firstAttribute="top" secondItem="ig5-1y-QnI" secondAttribute="bottom" constant="30" id="kBN-VP-XNe"/>
+                            <constraint firstItem="FfS-Ml-lkh" firstAttribute="top" secondItem="Ykj-Js-HPn" secondAttribute="bottom" constant="30" id="ktg-LR-qhv"/>
+                            <constraint firstItem="ig5-1y-QnI" firstAttribute="top" secondItem="9Nc-tF-O6w" secondAttribute="bottom" constant="10" id="vvH-EJ-8O7"/>
+                            <constraint firstItem="ig5-1y-QnI" firstAttribute="leading" secondItem="1PO-g3-vyr" secondAttribute="leading" constant="40" id="wpK-rT-6uX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1PO-g3-vyr"/>
                     </view>
                 </viewController>
