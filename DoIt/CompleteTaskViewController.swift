@@ -18,14 +18,32 @@ class CompleteTaskViewController: UIViewController {
     //New task object
     var task = Task()
     
+    //Used to pass information between ViewControllers
+    var previousViewController = TasksViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        taskLabel.text = task.name
+        
+        if task.important {
+            //Set Label for each cell
+            taskLabel.text = "❗️\(task.name)"
+        } else {
+            //Set Label
+            taskLabel.text = task.name
+        }
+        
     }
 
     @IBAction func completeButton(_ sender: Any) {
         
+        //Remove the task after pushing the complete button
+        previousViewController.tasks.remove(at: previousViewController.selectedIndex)
+        
+        //Refresh the tableView after adding a new task
+        previousViewController.tableView.reloadData()
+        
+        //After clicking the add button it will go back to the previous ViewController
+        navigationController!.popViewController(animated: true)
         
     }
     

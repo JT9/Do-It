@@ -17,6 +17,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Empty array of Task objects
     var tasks : [Task] = []
     
+    //Used to keep track of index
+    var selectedIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +60,9 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Used to perform segue to a selected cell
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        //Update the index of the selected row
+        selectedIndex = indexPath.row
         
         let task = tasks[indexPath.row]
         performSegue(withIdentifier: "selectTasksSegue", sender: task)
@@ -109,7 +115,7 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let nextViewController = segue.destination as! CompleteTaskViewController
             
             nextViewController.task = sender as! Task
-            
+            nextViewController.previousViewController = self
         }
     }
         
