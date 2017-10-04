@@ -10,7 +10,7 @@ import UIKit
 
 //Need to add UITableViewDelegate & DataSource in order to use TableView
 class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -55,6 +55,16 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell
     }
     
+    //Used to perform segue to a selected cell
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let task = tasks[indexPath.row]
+        performSegue(withIdentifier: "selectTasksSegue", sender: task)
+    }
+    
+    
+    
+    
     //Used to make task objects
     func makeTasks() -> [Task] {
         
@@ -86,17 +96,29 @@ class TasksViewController: UIViewController, UITableViewDelegate, UITableViewDat
     //Used to reference var previousViewController to pass information
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let nextViewController = segue.destination as! CreateTaskViewController
+        //Used to check which segue to perform
+        if segue.identifier == "addSegue" {
+            
+            let nextViewController = segue.destination as! CreateTaskViewController
+            
+            nextViewController.previousViewController = self
+        }
         
-        nextViewController.previousViewController = self
+        if segue.identifier == "selectTasksSegue" {
+            
+            let nextViewController = segue.destination as! CompleteTaskViewController
+            
+            nextViewController.task = sender as! Task
+            
+        }
     }
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
         
-    }
-
-
+        
+        override func didReceiveMemoryWarning() {
+            super.didReceiveMemoryWarning()
+            
+        }
+        
+        
 }
 
