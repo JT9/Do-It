@@ -14,8 +14,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBOutlet weak var tableView: UITableView!
     
+    //Empty array of Task objects
+    var tasks : [Task] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Using func to make tasks from Task class
+        tasks = makeTasks()
         
         //Needs these two for Tableview to look to this class
         tableView.dataSource = self
@@ -26,16 +32,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //How many rows
-        return 10
+        //How many rows from array
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         //New UITableView object
         let cell = UITableViewCell()
-        //Label for tableView
-        cell.textLabel?.text = "Hello"
+        
+        //Getting number of tasks to display
+        let task = tasks[indexPath.row]
+        
+        //Set Label for each cell
+        cell.textLabel?.text = task.name
+        
         return cell
+    }
+    
+    //Used to make task objects
+    func makeTasks() -> [Task] {
+        
+        //Used to test the tableView with object data
+        let task1 = Task()
+        task1.name = "Walk the dog"
+        task1.important = false
+        
+        let task2 = Task()
+        task2.name = "Buy Cheese"
+        task2.important = false
+        
+        let task3 = Task()
+        task3.name = "Mow the lawn"
+        task3.important = false
+        
+        //returning 3 tester tasks
+        return [task1, task2, task3]
+        
+        
+        
     }
     
 
